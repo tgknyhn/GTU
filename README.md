@@ -4,8 +4,8 @@ This file contains all my works I have done so far in Gebze Technical University
 
 What do I mean by all my works?
 -------------------------------
--> Term projects
--> Summer projects
--> Homeworks
--> Labs
+-> Term projects \n
+-> Summer projects \n
+-> Homeworks \n
+-> Labs \n
 ...
