@@ -1,0 +1,109 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class BSTHeapTree<E extends Comparable<E>> {
+    - heapTree : Node<E>
+    - MAX_HEAP_SIZE : final int
+    - mode : E
+    - modeOccurrence : int
+    - numOfDataOccurrence : static int
+
+    + BSTHeapTree()
+
+    - addRecursive(Node<E>, E) : Node<E>
+    - removeElement(Node<E>, Node<E>, E) : int
+    - removeNode(Node<E>, Node<E>, E) : void
+    - findRecursive(Node<E>, E) : Node<E>
+    - isLeftChild(Node<E>, E) : boolean
+
+    + add(E) : int
+    + remove(E) : int
+    + find(E) : int
+    + find_mode() : E
+    + find_mode_occurrence() : int
+
+}
+
+class MaxHeap<E extends Comparable<E>> {
+    - MAX_SIZE : final int
+    - size : int
+    - data : ArrayList<E>
+    - occurrences : ArrayList<int>
+
+
+    + MaxHeap()
+    + MaxHeap(int)
+
+    - swap(int, int) : void
+    - parent(int) : int
+    - left(int) : int
+    - right(int) : int
+    - isLaef(int) : boolean
+    - maxHeapify(int) : void
+
+    + builtMaxHeap() : void
+    + getMax() : E
+    + getMin() : E
+    + setMax(E) : void
+    + getSize() : int
+    + getOccurrence(E) : int
+
+    + insert(E) : int
+    + searchElement(E) : int
+    + merge(MaxHeap<E>) : void
+    + removeWithPriority(int) : E
+
+    + print() : void
+    + iterator() : Iterator<E>
+
+}
+
+interface Iterator< E > {
+    + hasNext() : boolean
+    + next() : E
+    + remove() : void
+    + setLast(E) : E
+}
+
+class Node<E extends Comparable<E>> {
+    - heap : MaxHeap<E>
+    - leftChild : Node<E>
+    - rightChild : Node<E>
+
+    + Node(E)
+
+    + print(StringBuilder, boolean, StringBuilder) : StringBuilder
+}
+
+class myIterator<implements Iterator<E>> {
+    - lastItemReturnedIndex : int
+    - lastItemReturned : E
+    - index : int
+
+    - myIterator()
+
+    + hasNext() : boolean
+    + next() : E
+    + remove() : void
+    + setLast(E) : E
+}
+
+class Run {
+    + main() : static void
+}
+
+'Linking'
+Iterator <|-- myIterator
+
+MaxHeap +-- myIterator
+
+BSTHeapTree +-- Node
+
+BSTHeapTree o-- MaxHeap
+
+Run <|-- BSTHeapTree
+
+Run <|-- MaxHeap
+
+
+@enduml
