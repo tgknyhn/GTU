@@ -1,0 +1,434 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+'Company'
+interface Company {
+    MAX_BRANCH_NUMBER
+    MAX_EMPLOYEE_NUMBER
+    MAX_CUSTOMER_NUMBER
+
+    String getName()
+    User getAdmin()
+    int getBranchNumber()
+    int getEmployeeNumber()
+    int getCustomerNumber()
+
+    void setName(String)
+    void setAdmin(User)
+    void setBranchNumber(int)
+    void setEmployeeNumber(int)
+    void setCustomerNumber(int)
+
+    default void userLogin()
+    default void userRegister(String)
+
+    boolean isThereSuchUser(String, String, String)
+    User findCustomerByID(int)
+
+    void adminLogin(String, String)
+    void employeeLogin(String, String)
+    void customerLogin(String, String)
+
+    void employeeRegister(String, String, String, String)
+    void customerRegister(String, String, String, String)
+}
+
+class FurnitureCompany {
+    - name : String
+
+    - branches : tkLinkedList<FurnitureBranch>
+
+    - admin : User
+    + branchEmployees : tkArrayList<User>
+    - customers : tkArrayList<User>
+
+    - branchNumber : int
+    - employeeNumber : int
+    - customerNumber : int
+
+    - index : int
+
+    + FurnitureCompany(String, int, User)
+
+    + String getName()
+    + User getAdmin()
+    + FurnitureBranch getBranch(int)
+    + int getBranchNumber()
+    + int getEmployeeNumber()
+    + int getCustomerNumber()
+
+    + void setName(String)
+    + void setAdmin(User)
+    + void setBranchNumber(int)
+    + void setEmployeeNumber(int)
+    + void setCustomerNumber(int)
+
+    + boolean isThereSuchUser(String, String, String)
+    + User findCustomerByID(int)
+
+    + void adminLogin(String, String)
+    + void employeeLogin(String, String)
+    + void customerLogin(String, String)
+
+    + void employeeRegister(String, String, String, String)
+    + void customerRegister(String, String, String, String)
+}
+class FurnitureBranch {
+    + MAX_CHAIR: final static int
+    + MAX_DESK: final static int
+    + MAX_TABLE: final static int
+    + MAX_BOOKCASE: final static int
+    + MAX_CABINET: final static int
+
+    + officeChairs: tkHybridList<Furniture>
+    + officeDesks: tkHybridList<Furniture>
+    + meetingTables: tkHybridList<Furniture>
+    + bookcases: tkHybridList<Furniture>
+    + officeCabinets: tkHybridList<Furniture>
+
+    + FurnitureBranch()
+
+    + int getCount(tkHybridList<Furniture>, Color, Model)
+
+    - void furnitureArrFiller(tkHybridList<Furniture>)
+    + tkHybridList<Furniture> getFurnitureArr(String)
+    + void printFurnitureArr(tkHybridList<Furniture>)
+
+    + void addProduct(tkHybridList<Furniture>, Color, Model)
+    + void addAllProducts(tkHybridList<Furniture>)
+    + void removeProduct(tkHybridList<Furniture>, Color, Model)
+}
+
+
+'User'
+interface User {
+    String getName()
+    String getSurname()
+    String getEmail()
+    String getPassword()
+    String getAddress()
+    Long   getPhoneNumber()
+    int    getCustomerID()
+    String getOrder()
+    int    getOrderCount()
+
+    void setName(String)
+    void setSurname(String)
+    void setEmail(String)
+    void setPassword(String)
+    void setAddress(String)
+    void setPhoneNumber(long)
+    void setOrder(String, Model, Color)
+    void setOrderCount(int)
+
+    void commands(Company, tkHybridList<Furniture>, tkArrayList<User>)
+}
+
+class Administrator {
+    - name     : String
+    - surname  : String
+    - email    : String
+    - password : String
+
+    + Administrator(String, String, String, String)
+
+    + String getName()
+    + String getSurname()
+    + String getEmail()
+    + String getPassword()
+
+    + void setName(String)
+    + void setSurname(String)
+    + void setEmail(String)
+    + void setPassword(String)
+
+    + void commands(Company, tkHybridList<Furniture>, tkArrayList<User>)
+
+    + void addBranch(Company, tkLinkedList<FurnitureBranch>)
+    + void removeBranch(Company, tkLinkedList<FurnitureBranch>)
+    + void addBranchEmployee(Company)
+    + void removeBranchEmployee(Company, tkArrayList<User>)
+    + void controlProducts(Company, tkLinkedList<FurnitureBranch>, tkArrayList<User>)
+}
+
+class BranchEmployee {
+    - name     : String
+    - surname  : String
+    - email    : String
+    - password : String
+
+    + BranchEmployee(String, String, String, String)
+
+    + String getName()
+    + String getSurname()
+    + String getEmail()
+    + String getPassword()
+
+    + void setName(String)
+    + void setSurname(String)
+    + void setEmail(String)
+    + void setPassword(String)
+
+    + void commands(Company, tkLinkedList<FurnitureBranch>, tkArrayList<User>)
+
+    + void inquireStock(Company, tkLinkedList<FurnitureBranch>)
+    + void informManager(tkLinkedList<FurnitureBranch>, tkHybridList<Furniture>, int)
+    + void customerInformation(Company, tkLinkedList<FurnitureBranch>)
+    + void addNewOrder(FurnitureBranch, User)
+
+    + String toString()
+}
+
+class Customer {
+    - customerNumber: static int
+    - MAX_ORDER: final static int
+
+    - name     : String
+    - surname  : String
+    - email    : String
+    - password : String
+    - address  : String
+    - phoneNumber: long
+    - customerID: int
+    - previousOrders: String[]
+    - orderCount: int
+
+    + BranchEmployee(String, String, String, String)
+
+    + String getName()
+    + String getSurname()
+    + String getEmail()
+    + String getPassword()
+    + String getAddress()
+    + Long   getPhoneNumber()
+    + int    getCustomerID()
+    + String getOrder()
+    + int    getOrderCount()
+
+    + void setName(String)
+    + void setSurname(String)
+    + void setEmail(String)
+    + void setPassword(String)
+    + void setAddress(String)
+    + void setPhoneNumber(long)
+    + void setOrder(String, Model, Color)
+    + void setOrderCount(int)
+
+    + void createID()
+
+
+    + void commands(Company, tkLinkedList<FurnitureBranch>, tkArrayList<User>)
+
+    + void searchForProduct(Company, tkLinkedList<FurnitureBranch>)
+    + void listOfProducts(Company, tkLinkedList<FurnitureBranch>)
+    + void previousOrders()
+
+    + String toString()
+}
+
+
+'Furniture'
+abstract class Furniture {
+    - name: String
+    - price: int
+
+    - color: Color
+    - model: Model
+
+    + colors: Color[]
+    + models: Model[]
+
+    + Furniture(String, Color, Color[], Model, Model[], int)
+
+    + String getName()
+    + Color getColor()
+    + Model getModel()
+    + int getPrice()
+
+    + String toString()
+}
+
+class OfficeChair {
+    - nameOC: final static String
+    - price: final static int
+    + colorsOC: final static Color[]
+    + modelsOC: final static Model[]
+
+    + OfficeChair(Color, Model)
+}
+
+class OfficeDesk {
+    - nameOD: final static String
+    - price: final static int
+    + colorsOD: final static Color[]
+    + modelsOD: final static Model[]
+
+    + OfficeDesk(Color, Model)
+}
+class MeetingTable {
+    - nameMT: final static String
+    - price: final static int
+    + colorsMT: final static Color[]
+    + modelsMT: final static Model[]
+
+    + MeetingTable(Color, Model)
+}
+class Bookcase {
+    - nameBC: final static String
+    - price: final static int
+    + colorsBC: final static Color[]
+    + modelsBC: final static Model[]
+
+    + Bookcase(Model)
+}
+class OfficeCabinet {
+    - nameOCB: final static String
+    - price: final static int
+    + colorsOCB: final static Color[]
+    + modelsOCB: final static Model[]
+
+    + OfficeCabinet(Model)
+}
+
+class tkArrayList {
+    - INITIAL_CAPACITY: static final int
+    - data: E[]
+    - size: int
+    - capacity: int
+
+    + tkArrayList(String)
+    + boolean add(String, String, String, String)
+    + boolean add(E)
+    + void add(int, E)
+    + E get(int)
+    + E set(int, E)
+    + int size()
+    + int indexOf(E)
+    + E remove(int)
+    - void reallocate()
+}
+
+class tkLinkedList {
+    - head: Node<E>
+    - tail: Node<E>
+    - size: int
+
+    + tkLinkedList()
+    + E get(int)
+    + E getFirst()
+    + E getLast()
+    + int size()
+    + E set(int, E)
+    + int indexOf(E)
+    + E remove(int)
+    + boolean add(E)
+    + void add(int, E)
+    + void addFirst(E)
+    + void addLast(E)
+    + myListIterator listIterator(int)
+
+}
+
+class tkHybridList {
+    - MAX_NUMBER: int
+    - index: int
+    - furnitures: tkLinkedList<tkArrayList<E>>
+
+    + tkHybridList()
+
+    + boolean add(E)
+    + E get(int)
+    + int size()
+    + E remove(int)
+    + void set(int, E)
+}
+
+class myListIterator {
+    - nextItem: Node<E>
+    - lastItemReturned: Node<E>
+    - index: int
+
+    - myListIterator(int)
+
+    + boolean hasNext()
+    + E next()
+    + boolean hasPrevious()
+    + E previous()
+    + int nextIndex()
+    + int previousIndex()
+    + void remove()
+    + E remove(int)
+    + void set(E)
+    + void add(E)
+}
+
+class Node {
+    - data: E
+    - next: Node<E>
+    - prev: Node<E>
+
+    - Node(E)
+}
+
+
+'Enum'
+enum Model {
+    v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12
+
+    + Model getModel(String)
+}
+enum Color {
+    RED, WHITE, BLACK, PINK, BLUE, DEFAULT
+
+    + Color getColor(String)
+}
+
+
+'Test'
+class testRun {
+    + main(String[])
+}
+
+
+'Connections'
+
+'Company'
+Company <|-- FurnitureCompany
+
+FurnitureCompany o-- tkArrayList
+FurnitureCompany o-- tkLinkedList
+
+FurnitureBranch o-- tkHybridList
+
+'User'
+User <|-- Administrator
+User <|-- BranchEmployee
+User <|-- Customer
+
+'Furniture'
+Furniture <|-- OfficeChair
+Furniture <|-- OfficeDesk
+Furniture <|-- MeetingTable
+Furniture <|-- Bookcase
+Furniture <|-- OfficeCabinet
+
+'enum'
+Furniture o-- Model
+Furniture o-- Color
+
+'tkArrayList'
+tkArrayList o-- User
+
+'tkLinkedList'
+tkLinkedList o-- Node
+tkLinkedList o-- myListIterator
+tkLinkedList o-- FurnitureBranch
+
+'tkHybridList'
+tkHybridList o-- Furniture
+
+'Test'
+testRun -- Company
+
+@enduml

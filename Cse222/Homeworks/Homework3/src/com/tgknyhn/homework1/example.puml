@@ -1,0 +1,50 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+:Main Admin: as Admin
+(Use the application) as (Use)
+
+User -> (Start)
+User --> (Use)
+
+Admin ---> (Use)
+
+note right of Admin : This is an example.
+
+note right of (Use)
+A note can also
+be on several lines
+end note
+
+note "This note is connected\nto several objects." as N2
+(Start) .. N2
+N2 .. (Use)
+@enduml
+
+
+(Add Branch) --> [Adds another branch to the company]
+[Adds another branch to the company] --> (Admin Commands)
+
+(Remove Branch) --> [Removes selected branch from the company]
+[Removes selected branch from the company] --> (Admin Commands)
+
+(Remove Branch Employee) --> [Removes selected employee from the company]
+[Removes selected employee from the company] --> (Admin Commands)
+
+(Add Branch Employee) --> (Register)
+(Register) --> (Admin Commands)
+
+(Control Products) --> [Show how many product is out of stock from selected branch]
+[Show how many product is out of stock from selected branch] --> (Admin Commands)
+
+'after customer commands'
+(Search For a Product) --> [Buy a product]
+(List of Products) --> [Buy a product]
+[Buy a product] --> (Previous Orders) : adds it here
+
+'after employee commands'
+(Customer Information) --> [Buy a product]
+(Customer Information) --> (Previous Orders)
+(Previous Orders) --> (Employee Commands) : only\nafter\nemployee\nuses
+
+(Create Subscription) --> (Register)

@@ -1,0 +1,6 @@
+Hi and Welcome to lecture Cse222 Homework 3
+
+1) To compile and run the code, you should be in the Homework1 file destination. 
+2) Then to compile the code write "make" to the terminal. It will compile and run the code.
+3) "make clean" will remove all .class files.
+4) Initially there will be 1 admin, 1 branch employee and 1 customer.

@@ -1,0 +1,47 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+package FurnitureCompanyAutomationSystem {
+:Administrator: as admin
+:Customer: as customer
+:Branch Employee: as employee
+
+'start'
+admin --> (Login)
+customer --> (Login)
+employee --> (Login)
+
+'register (customer)'
+customer --> (Register)
+
+'after register'
+(Register) --> (Login)
+
+'after login'
+(Login) --> (Commands)
+
+(Commands) --> (Admin Commands)
+(Commands) --> (Customer Commands)
+(Commands) --> (Employee Commands)
+
+'admin commands'
+(Admin Commands) --> (Add Branch)
+(Admin Commands) --> (Remove Branch)
+(Admin Commands) --> (Add Branch Employee)
+(Admin Commands) --> (Remove Branch Employee)
+(Admin Commands) --> (Control Products)
+
+'customer commands'
+(Customer Commands) --> (Search For a Product)
+(Customer Commands) --> (List of Products)
+(Customer Commands) --> (Previous Orders)
+
+'employee commands'
+(Employee Commands) --> (Inquire Product Stock)
+(Employee Commands) --> (Customer Information)
+(Employee Commands) --> (Create Subscription)
+
+'after admin commands'
+}
+
+@enduml
