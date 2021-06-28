@@ -1,0 +1,4 @@
+Product ID: 1234ASDF1234QWER
+Customer ID: 12345678
+Current Status: Sold!
+

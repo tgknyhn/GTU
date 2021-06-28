@@ -1,0 +1,8 @@
+ID: 12345678
+Name: null
+Password: qwerty
+
+ID: 98765432
+Name: Shopmania
+Password: 1234as
+

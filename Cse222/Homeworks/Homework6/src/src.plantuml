@@ -1,0 +1,174 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+    class Application {
+        - productFile : File
+        - userIDs : Hashtable<Integer, String>
+        - usersFile : File
+        + Application()
+        + csv_to_txt()
+        + login()
+        + register()
+        - userExist()
+    }
+
+
+    class CategoryTree {
+        {static} - foundNode : Node
+        + CategoryTree()
+        + add()
+        + addAll()
+        + parentCategory()
+        + toString()
+        - checkChildren()
+        - findNode()
+        - findRecursive()
+        - printRecursive()
+    }
+
+
+    class CategoryTree.Node {
+        - category : String
+        - children : ArrayList<Node>
+        + Node()
+        + Node()
+        + toString()
+    }
+
+
+    class Customer {
+        - ID : int
+        - commandsList : ArrayList<String>
+        - name : String
+        - orderFile : File
+        - password : String
+        - productFile : File
+        + Customer()
+        + categoryFilter()
+        + exeCommand()
+        + getID()
+        + getName()
+        + getPassword()
+        + getProductsByName()
+        + getProductsByTrader()
+        + giveOrder()
+        + priceFilter()
+        + printCommandList()
+        + setID()
+        + setName()
+        + setPassword()
+        + sortByDiscountPercentage()
+        + sortByName()
+        + sortByPrice()
+        - doesContain()
+        - exeSecCommand()
+    }
+
+
+    class InsertionSort {
+        {static} + sort()
+        {static} - swap()
+    }
+
+
+    class MergeSort {
+        {static} + sort()
+        {static} - merge()
+    }
+
+
+    class Product {
+        - ID : String
+        - description : String
+        - discountedPrice : int
+        - price : int
+        - productCategory : String
+        - productName : String
+        - trader : String
+        + Product()
+        + compareDiscountPercentage()
+        + compareName()
+        + comparePrice()
+        + getDescription()
+        + getDiscountPercentage()
+        + getDiscountedPrice()
+        + getID()
+        + getPrice()
+        + getProductCategory()
+        + getProductName()
+        + getTrader()
+        + toString()
+    }
+
+
+    class Run {
+        {static} - csvFile : File
+        {static} - currPath : String
+        {static} - myApp : Application
+        {static} - orderFile : File
+        {static} - productFile : File
+        {static} - scanner : Scanner
+        {static} - usersFile : File
+        {static} + main()
+        {static} - login()
+        {static} - menu()
+        {static} - register()
+        {static} - userMenu()
+    }
+
+
+    class SelectionSort {
+        {static} + sort()
+        {static} - swap()
+    }
+
+  
+
+    class Trader {
+        - ID : int
+        - commandsList : ArrayList<String>
+        - name : String
+        - orderFile : File
+        - password : String
+        - productFile : File
+        + Trader()
+        + addProduct()
+        + editProduct()
+        + exeCommand()
+        + getID()
+        + getName()
+        + getPassword()
+        + handleOrder()
+        + printCommandList()
+        + removeProduct()
+        + setID()
+        + setName()
+        + setPassword()
+        - createProduct()
+        - doesContain()
+        - getProductByID()
+        - isThereOrderForID()
+    }
+
+
+    interface User {
+        {abstract} + exeCommand()
+        {abstract} + getID()
+        {abstract} + getName()
+        {abstract} + getPassword()
+        + isSamePerson()
+        {abstract} + printCommandList()
+        {abstract} + setID()
+        {abstract} + setName()
+        {abstract} + setPassword()
+    }
+
+
+  CategoryTree o-- CategoryTree.Node : root
+  CategoryTree +-down- CategoryTree.Node
+  CategoryTree.Node o-- CategoryTree.Node : parent
+  Customer .up.|> User
+  Customer o-- CategoryTree : categories
+  Trader .up.|> User
+
+@enduml
