@@ -1,0 +1,48 @@
+n
+(a,a)(a,b)(a,e)(b,b)(b,e)(c,c)(c,d)(d,d)(e,e)
+Reflexive: Yes. Every element has a relation with itself
+Symmetric: No. Because it is missing relation (b,a) for (a,b).
+Antisymmetric: Yes. Because for the relation (c,d), (d,c) is not found
+Transitive: Yes. Because for the relations (e,e) and (e,e), the relation (e,e) is found.
+n
+(a,a)(a,b)(b,a)(b,b)(c,c)(c,d)(d,c)(d,d)
+Reflexive: No. Because the relation (e,e) is missing.
+Symmetric: Yes. Because every relation has a symmetric one
+Antisymmetric: No. Because there are two relations (a,b) - (b,a) and a!=b
+Transitive: Yes. Because for the relations (d,d) and (d,c), the relation (d,c) is found.
+n
+(a,a)(b,b)(c,c)(d,d)(e,e)
+Reflexive: Yes. Every element has a relation with itself
+Symmetric: Yes. Because every relation has a symmetric one
+Antisymmetric: Yes. Because there are two relations (a,a) - (a,a) and a==a
+Transitive: Yes. Because for the relations (e,e) and (e,e), the relation (e,e) is found.
+n
+(1,1)(1,2)(2,1)
+Reflexive: No. Because the relation (2,2) is missing.
+Symmetric: Yes. Because every relation has a symmetric one
+Antisymmetric: No. Because there are two relations (1,2) - (2,1) and 1!=2
+Transitive: Yes. Because for the relations (2,1) and (1,1), the relation (2,1) is found.
+n
+(1,1)(1,2)(2,1)(2,2)(3,4)(4,1)(4,4)
+Reflexive: No. Because the relation (3,3) is missing.
+Symmetric: No. Because it is missing relation (4,3) for (3,4).
+Antisymmetric: No. Because there are two relations (1,2) - (2,1) and 1!=2
+Transitive: Yes. Because for the relations (4,4) and (4,1), the relation (4,1) is found.
+n
+(2,1)(3,1)(3,2)(4,1)(4,2)(4,3)
+Reflexive: No. Because the relation (1,1) is missing.
+Symmetric: No. Because it is missing relation (1,2) for (2,1).
+Antisymmetric: Yes. Because for the relation (4,3), (3,4) is not found
+Transitive: Yes. Because for the relations (4,3) and (3,1), the relation (4,1) is found.
+n
+(1,1)(1,2)(1,3)(1,4)(2,2)(2,3)(2,4)(3,3)(3,4)(4,4)
+Reflexive: Yes. Every element has a relation with itself
+Symmetric: No. Because it is missing relation (2,1) for (1,2).
+Antisymmetric: Yes. Because for the relation (3,4), (4,3) is not found
+Transitive: Yes. Because for the relations (4,4) and (4,4), the relation (4,4) is found.
+n
+(1,1)(1,2)(1,4)(2,1)(2,2)(3,3)(4,1)(4,4)
+Reflexive: Yes. Every element has a relation with itself
+Symmetric: Yes. Because every relation has a symmetric one
+Antisymmetric: No. Because there are two relations (1,2) - (2,1) and 1!=2
+Transitive: Yes. Because for the relations (4,4) and (4,1), the relation (4,1) is found.
