@@ -1,2 +1,1 @@
-# Cse102-Homeworks
-A repository for Cse102 homeworks
+Lecture : Cse102 Computer Programming
