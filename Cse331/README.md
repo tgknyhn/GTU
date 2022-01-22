@@ -1,1 +1,2 @@
-Lecture : Cse331 Computer Organizations
+# CSE331
+Computer Organization
