@@ -1,1 +1,2 @@
-Lecture : Cse211 Discrete Mathematics
+# CSE211 
+**Discrete Mathematics**
