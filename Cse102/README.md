@@ -1,1 +1,2 @@
-Lecture : Cse102 Computer Programming
+# CSE102 
+**Computer Programming**
