@@ -1,1 +1,2 @@
-Lecture : Cse232 Logic Circuits and Design
+# Cse232 
+**Logic Circuits and Design**
