@@ -1,2 +1,2 @@
-# Cse232 
+# CSE232 
 **Logic Circuits and Design**
