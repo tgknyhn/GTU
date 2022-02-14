@@ -1,2 +1,2 @@
-# CSE102
-Computer Programming
+# CSE321
+Introduction to Algorithm Design
