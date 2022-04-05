@@ -2,7 +2,7 @@
 
 This file contains all of my works I have done so far in Gebze Technical University as a Computer Engineering student.  
 
-<h1 align='center'> Classes </h1>
+<h1 align='center'> Courses </h1>
 
 * Cse102 - [Computer Programming](https://github.com/tgknyhn/GTU/tree/main/Cse102)
 
