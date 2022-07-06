@@ -1,9 +1,0 @@
-str2 str2 str2
-sttr1
-stTTtr1
-sttttr1
-stttttr1
-
-str4 str4 stttr3
-
-str6
