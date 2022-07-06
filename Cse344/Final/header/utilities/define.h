@@ -1,0 +1,24 @@
+#ifndef DEFINE_H
+#define DEFINE_H
+
+#define IP_ADDRESS "127.0.0.9"
+
+#define MAX_REAL_ESTATE_LEN 100
+#define MAX_SERVANT_COUNT 81
+#define MAX_STREET_LEN 100
+#define MAX_REQFILE_LEN 50
+#define MAX_REQUEST 200
+#define MAX_CITY_LEN 100
+#define MAX_IP_LENGTH 20
+
+#define TOTAL_CITY_COUNT 81
+
+#define SERVANT_REQ_LEN 9
+
+#define TRANSACTION_PER_DATE 100
+#define DATE_PER_CITY 10
+
+#define SIGNAL 1
+#define NOSIGNAL 0
+
+#endif
