@@ -1,0 +1,23 @@
+19/4/2022 | 16:17:52 -> Server Y (result.log, p=2, t=5) started
+19/4/2022 | 16:17:52 -> Instantiated server Z
+19/4/2022 | 16:17:52 -> Server Z (result.log, t=5, r=3) started
+19/4/2022 | 16:17:52 -> Worker PID#6349 is handling client PID#6227, matrix size 3x3, pool 3/2
+19/4/2022 | 16:17:52 -> Worker PID#6347 is handling client PID#6221, matrix size 3x3, pool 3/2
+19/4/2022 | 16:17:52 -> Worker PID#6351 is handling client PID#6215, matrix size 3x3, pool 3/2
+19/4/2022 | 16:17:57 -> Worker PID#6351 is responding to client PID#6215: the matrix IS invertible
+19/4/2022 | 16:17:57 -> Worker PID#6347 is responding to client PID#6221: the matrix IS NOT invertible
+19/4/2022 | 16:17:57 -> Worker PID#6351 is handling client PID#6229, matrix size 3x3, pool 3/2
+19/4/2022 | 16:17:57 -> Worker PID#6349 is responding to client PID#6227: the matrix IS invertible
+19/4/2022 | 16:17:57 -> Worker PID#6347 is handling client PID#6231, matrix size 3x3, pool 3/2
+19/4/2022 | 16:17:57 -> Worker PID#6349 is handling client PID#6225, matrix size 3x3, pool 3/2
+19/4/2022 | 16:18:2 -> Worker PID#6351 is responding to client PID#6229: the matrix IS NOT invertible
+19/4/2022 | 16:18:2 -> Worker PID#6351 is handling client PID#6217, matrix size 3x3, pool 3/2
+19/4/2022 | 16:18:2 -> Worker PID#6347 is responding to client PID#6231: the matrix IS invertible
+19/4/2022 | 16:18:2 -> Worker PID#6347 is handling client PID#6223, matrix size 3x3, pool 3/2
+19/4/2022 | 16:18:2 -> Worker PID#6349 is responding to client PID#6225: the matrix IS NOT invertible
+19/4/2022 | 16:18:2 -> Worker PID#6349 is handling client PID#6219, matrix size 3x3, pool 3/2
+19/4/2022 | 16:18:7 -> Worker PID#6351 is responding to client PID#6217: the matrix IS NOT invertible
+19/4/2022 | 16:18:7 -> Worker PID#6347 is responding to client PID#6223: the matrix IS invertible
+19/4/2022 | 16:18:7 -> Worker PID#6351 is handling client PID#6213, matrix size 3x3, pool 3/2
+19/4/2022 | 16:18:7 -> Worker PID#6349 is responding to client PID#6219: the matrix IS invertible
+19/4/2022 | 16:18:12 -> Worker PID#6351 is responding to client PID#6213: the matrix IS NOT invertible
