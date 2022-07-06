@@ -1,0 +1,86 @@
+Slayt 1 - What is rejection method?
+
+- Today I will be talking about Rejection Method. 
+- What is Rejection Method? It is simply a Monte Carlo method
+- As with the other Monte Carlo methods, this method also uses randomness to generate samples
+- What we do with Rejection Method is, generating random numbers using other distribution functions instead of given one.
+- After creating samples using new distribution function, we check if generated sample follows given distribution or not. If it does, we accept the sample. If not then we reject it.
+
+
+
+Slayt 2 - Why Do we need rejection method?
+
+- Why do we need rejection method? Well because sometimes we don't know how to sample from given distribution function.
+- When that happens, we use another(easy to sample) distribution function.
+- now we have 2 different distributions.
+
+First one is : 
+
+Target distribution function. This function is the function we want to get sample from. But due to its complexity, we cannot achieve that directly. 
+
+Second one is : 
+
+Proposal Distribution function. This function is the function that we can sample from. 
+
+- But when we use proposal distribution function instead of target, we face with some problems:
+
+For example, how do we make sure if generated sample follows target distribution function or not? 
+
+This is the main problem with the rejection method. To make sure that we follow target distribution function, a relation between target function and sample of proposal distribution function is created. 
+
+Formally this relation called Acceptance Criterion. I will talk about this topic on later slides.
+
+
+
+Slayt 3 - Which Distribution Function to Choose?/Users/tgknyhn/Desktop/math.txt
+
+Now we need to talk about which distribution function we need to choose for our proposal function.
+
+The things we need to consider: how fast we can sample from it and how easy we can get a sample from it.
+
+In course book it uses Beta Distribution but it is still inefficient compared to Uniform Distribution. And here is the probability density function of the uniform distribution
+
+
+ 
+Slayt 4 - What is Acceptance Criterion? (Scaling Constant)
+
+After choosing distribution function, we need to talk about acceptance criterion. Acceptance criterion is the criteria that we use while we are deciding to accept or reject the generated sample.
+
+To be able to write acceptance criterion, first we need to find scaling constant.
+
+As we see with the previous picture, area of proposal function doesn’t cover the area of target distribution function
+
+To cover, we use a constant ”C” and multiply proposal function with this constant.
+
+C is unique for every distribution function. So how do we find it? Well this is another problem of the rejection method. Generally, if it is a simple target distribution function, maximization method can bu used to find this constant. For this example graph, the constant is 25.
+
+
+
+Slayt 5 - Sampling
+
+We know the range for x axis of the graph but we also need to write range for y axis. And for that, we use another uniform distribution function with the range between zero and C times g(x). 
+
+Using this new distribution function we can write our acceptance criteria as u is less than or equal to f(x)
+
+This y axis will tell us where our generated sample is. If it is less than or equal to f(x)(which is y-axis value of the target distribution function) then it can be accepted.
+
+
+
+Slayt 6 - Sampling (Ct'd)
+
+Now it is possible to decide if a generated sample follows target distribution function or not
+
+After deciding on repeat count, procedure to generate samples is as follows:
+
+	1. Generating a random number using proposal distribution function (x) (in this case we are using uniform distribution function, it is possible to use another distribution functions)
+
+	2. Generate a random number using Uniform distribution function (u) between 0 and C.g(x)
+
+	3. After that, we check for equation: u ⩽ C .g (x). If it is correct, then we accept it. If it is not, then we reject it
+
+	4. Repeat the procedure until we generate enough samples.
+
+
+Slayt 7 - Decreasing the Rejection Rate
+
+As you may notice, a lot of area covered by the proposal distribution function belongs to rejected area. This means, most of the generated samples will be rejected. To reduce it we can change our proposal distribution function. In course book Beta Distribution is used, with Gaussian distribution we can decrease rejection rate by %30 but it is still inefficient since sampling is faster with uniform distribution function.
