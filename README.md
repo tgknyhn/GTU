@@ -2,6 +2,8 @@
 
 This file contains all of my works I have done so far in Gebze Technical University as a Computer Engineering student.  
 
+Disclaimer: If you are a Computer Engineering student at Gebze Technical University, then use/copy everything here at your own risk. I encourage you to try doing your homeworks/projects on your own before looking here.
+
 <h1 align='center'> Courses </h1>
 
 * Cse102 - [Computer Programming](https://github.com/tgknyhn/GTU/tree/main/Cse102)
