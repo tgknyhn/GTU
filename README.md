@@ -42,6 +42,8 @@ Disclaimer: If you are a Computer Engineering student at Gebze Technical Univers
 
 * Cse495 - [Graduation Project 1](https://github.com/tgknyhn/GTU/tree/main/Cse495)
 
+---
+
 * Eng354 - [Community Services Practices](https://github.com/tgknyhn/GTU/tree/main/Eng354)
 
 * Math118 - [Probability and Statistics](https://github.com/tgknyhn/GTU/tree/main/Math118)
