@@ -1,0 +1,64 @@
+Passive Attack : Just reading the content
+Active Attack  : Reading and changing the content
+
+Substitution Cipher
+* Letters of plaintext are replaced by other letters
+* disadvantage : the last letters of the alphabet (which are mostly low frequency) tend to stay at the end
+* ex: Caesar Cipher
+
+Transposition Cipher
+* Letters of plaintext are rearranged
+* disadvantage : transposition can be easily detected by the cryptanalyst by doing a frequency count
+* ex: Rail Fence Cipher
+
+Unconditional Security
+* No matter how much time and computing power is available, the cipher cannot be broken
+
+Conditional Security
+* Given limited time and computing power, the cipher cannot be broken
+
+Symmetric Encryption
+* Same key is used for encryption and decryption
+* Fast
+* Less secure
+* ex: DES
+
+Asymmetric Encryption 
+* Different keys are used for encryption and decryption
+* Slow
+* More secure
+* Example : RSA
+
+
+1) Stream Cipher Encryption
+2) Block Cipher Encryption
+    - ECB
+    - CBC
+    - CTR
+    - Output Feedback Mode
+
+Mac & Hash
+    - Message Authentication Code
+    - Hash Function
+
+Diffie Hellman Key Exchange
+* It is used for changing keys in cryptography
+
+
+DES
+https://www.tutorialspoint.com/cryptography/images/des_structure.jpg
+
+Double DES
+https://media.geeksforgeeks.org/wp-content/uploads/20191230194755/Untitled-Diagram63.jpg
+
+RSA
+- Açık Anahtarlı bir şifreleme yöntemi
+- Two big enough prime numbers are selected (p and q)
+- n = p * q
+- phi(n) = (p-1) * (q-1)
+- e is selected such that gcd(e, phi(n)) = 1
+- d is selected such that (d * e) % phi(n) = 1
+- Public Key = (e, n)
+- Private Key = (d, n)
+
+AES

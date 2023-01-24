@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="kongoya_agit" size="0.300000 0.492000" />
+    <ImageTarget name="yabanci" size="0.300000 0.469565" />
+    <ImageTarget name="bir_sayi_tut" size="0.300000 0.472973" />
+    <ImageTarget name="marsli" size="0.300000 0.472750" />
+    <ImageTarget name="ates_hirsizi" size="0.300000 0.396476" />
+    <ImageTarget name="otomatik_portakal" size="0.300000 0.509915" />
+    <ImageTarget name="peter_pan" size="0.300000 0.465116" />
+    <ImageTarget name="saftirik" size="0.300000 0.470588" />
+    <ImageTarget name="hayvan_ciftligi" size="0.300000 0.465116" />
+  </Tracking>
+</QCARConfig>
